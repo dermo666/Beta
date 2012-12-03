@@ -4,3 +4,7 @@ README.txt
 demos/
 extras/documentation
 
+/vendor
+/.buildpath
+/.project
+/.settings
