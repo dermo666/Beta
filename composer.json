@@ -1,14 +1,19 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
+    "name": "Beta",
+    "description": "Research project for ZF2 and other.",
     "license": "BSD-3-Clause",
     "keywords": [
-        "framework",
-        "zf2"
+        "zf2",
+        "doctrine2",
+        "mysql",
+        "mongoDB"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "https://github.com/dermo666/Beta",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*"
+        "zendframework/zendframework": "2.0.5",
+        "doctrine/doctrine-module": "0.5.2",
+        "doctrine/doctrine-mongo-odm-module": "0.1.1"
     }
 }

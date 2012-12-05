@@ -1,18 +1,499 @@
 {
-    "hash": "3d8fc311b085e1e9bc4ed181947f205d",
+    "hash": "02a01a098e03f284701b09e36181a1b0",
     "packages": [
         {
-            "name": "zendframework/zendframework",
-            "version": "2.0.5",
+            "name": "doctrine/common",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/zendframework/zf2.git",
-                "reference": "release-2.0.5"
+                "url": "https://github.com/doctrine/common",
+                "reference": "b91837135ce102d2e95fb394b43d8d1d47cde95c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/zendframework/zf2/archive/release-2.0.5.zip",
-                "reference": "release-2.0.5",
+                "url": "https://github.com/doctrine/common/archive/b91837135ce102d2e95fb394b43d8d1d47cde95c.zip",
+                "reference": "b91837135ce102d2e95fb394b43d8d1d47cde95c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "time": "2012-12-04 14:57:34",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Common Library for Doctrine projects",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "collections",
+                "spl",
+                "eventmanager",
+                "annotations",
+                "persistence"
+            ]
+        },
+        {
+            "name": "doctrine/data-fixtures",
+            "version": "v1.0.0-ALPHA3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "v1.0.0-ALPHA3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/data-fixtures/zipball/v1.0.0-ALPHA3",
+                "reference": "v1.0.0-ALPHA3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "time": "2012-09-20 03:26:34",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\DataFixtures": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ]
+        },
+        {
+            "name": "doctrine/doctrine-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/doctrine/DoctrineModule.git",
+                "reference": "f31d3bb72edc6dfbe37243ec36be1206d3d5900f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/DoctrineModule/archive/f31d3bb72edc6dfbe37243ec36be1206d3d5900f.zip",
+                "reference": "f31d3bb72edc6dfbe37243ec36be1206d3d5900f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/console": ">=2.0.13",
+                "doctrine/common": ">=2.3-dev,<2.5-dev",
+                "zendframework/zendframework": "2.*",
+                "doctrine/data-fixtures": "1.*"
+            },
+            "time": "2012-12-01 01:55:06",
+            "bin": [
+                "bin/doctrine-module"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "DoctrineModule\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Spraggs",
+                    "email": "theman@spiffyjr.me",
+                    "homepage": "http://www.spiffyjr.me/"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://marco-pivetta.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Evan Coury",
+                    "email": "me@evancoury.com",
+                    "homepage": "http://blog.evan.pro/"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@hotmail.com"
+                },
+                {
+                    "name": "Michaël Gallego",
+                    "email": "mic.gallego@gmail.com",
+                    "homepage": "http://www.michaelgallego.fr"
+                }
+            ],
+            "description": "Zend Framework 2 Module that provides Doctrine basic functionality required for ORM and ODM modules",
+            "homepage": "http://www.doctrine-project.org/",
+            "keywords": [
+                "zf2",
+                "module",
+                "doctrine"
+            ]
+        },
+        {
+            "name": "doctrine/doctrine-mongo-odm-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineMongoODMModule",
+                "reference": "0649743b689fc47582db5a40187a22f8c0ccd101"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/DoctrineMongoODMModule/archive/0649743b689fc47582db5a40187a22f8c0ccd101.zip",
+                "reference": "0649743b689fc47582db5a40187a22f8c0ccd101",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zendframework": "2.*",
+                "doctrine/doctrine-module": "0.*",
+                "doctrine/mongodb-odm": "1.*"
+            },
+            "time": "2012-11-29 19:13:01",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "DoctrineMongoODMModule\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Spraggs",
+                    "email": "theman@spiffyjr.me",
+                    "homepage": "http://www.spiffyjr.me/"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://marco-pivetta.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Evan Coury",
+                    "email": "me@evancoury.com",
+                    "homepage": "http://blog.evan.pro/"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@hotmail.com"
+                },
+                {
+                    "name": "Tim Roediger",
+                    "email": "superdweebie@gmail.com",
+                    "homepage": "http://superdweebie.com"
+                }
+            ],
+            "description": "Zend Framework 2 Module that provides Doctrine MongoDB ODM functionality",
+            "homepage": "http://www.doctrine-project.org/",
+            "keywords": [
+                "mongodb",
+                "zf2",
+                "module",
+                "doctrine",
+                "odm"
+            ]
+        },
+        {
+            "name": "doctrine/mongodb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/mongodb",
+                "reference": "9ac0ba4f96ea50d20de940b9147ee68b308ea356"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/mongodb/archive/9ac0ba4f96ea50d20de940b9147ee68b308ea356.zip",
+                "reference": "9ac0ba4f96ea50d20de940b9147ee68b308ea356",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "ext-mongo": "*",
+                "doctrine/common": ">=2.1.0,<2.5-dev",
+                "symfony/yaml": ">=2.0,<2.3-dev",
+                "symfony/console": ">=2.0,<2.3-dev"
+            },
+            "time": "2012-12-02 23:00:57",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\MongoDB": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                },
+                {
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Doctrine MongoDB Abstraction Layer",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "persistence",
+                "mongodb"
+            ]
+        },
+        {
+            "name": "doctrine/mongodb-odm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/mongodb-odm.git",
+                "reference": "205de81707fea1e6e7d4ed735ffd7a93d454949b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/mongodb-odm/archive/205de81707fea1e6e7d4ed735ffd7a93d454949b.zip",
+                "reference": "205de81707fea1e6e7d4ed735ffd7a93d454949b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "doctrine/common": ">=2.2.0,<2.5-dev",
+                "doctrine/mongodb": ">=1.0.0-beta1,<1.1-dev",
+                "symfony/yaml": ">=2.0-dev,<2.3-dev",
+                "symfony/console": ">=2.0-dev,<2.3-dev"
+            },
+            "time": "2012-12-03 18:13:49",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\ODM\\MongoDB": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                },
+                {
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com",
+                    "homepage": "http://www.jwage.com/"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris@symfony.com"
+                }
+            ],
+            "description": "Doctrine MongoDB Object Document Mapper",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "persistence",
+                "mongodb"
+            ]
+        },
+        {
+            "name": "symfony/console",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console",
+                "reference": "236c4d50d364c21bafa46e35aaf4fd38eec63e66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Console/archive/236c4d50d364c21bafa46e35aaf4fd38eec63e66.zip",
+                "reference": "236c4d50d364c21bafa46e35aaf4fd38eec63e66",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2012-12-03 22:00:56",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml",
+                "reference": "bed4fddc24392513e01b32a78d600b1272ed9a6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Yaml/archive/bed4fddc24392513e01b32a78d600b1272ed9a6c.zip",
+                "reference": "bed4fddc24392513e01b32a78d600b1272ed9a6c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2012-11-13 14:08:04",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "zendframework/zendframework",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/zendframework/zf2.git",
+                "reference": "e221eaf311048c32e5389de16fedd43b5bd38a6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/zendframework/zf2/archive/e221eaf311048c32e5389de16fedd43b5bd38a6d.zip",
+                "reference": "e221eaf311048c32e5389de16fedd43b5bd38a6d",
                 "shasum": ""
             },
             "require": {
@@ -78,7 +559,7 @@
                 "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
                 "zendframework/zendservice-recaptcha": "ZendService\\ReCaptcha for rendering ReCaptchas in Zend\\Captcha and/or Zend\\Form"
             },
-            "time": "2012-11-29 15:32:02",
+            "time": "2012-12-03 21:30:17",
             "bin": [
                 "bin/classmap_generator.php"
             ],
@@ -89,7 +570,7 @@
                     "dev-develop": "2.1-dev"
                 }
             },
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Zend\\": "library/",
@@ -112,8 +593,9 @@
     "aliases": [
 
     ],
-    "minimum-stability": "stable",
-    "stability-flags": [
-
-    ]
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "doctrine/doctrine-module": 20,
+        "doctrine/doctrine-mongo-odm-module": 20
+    }
 }
