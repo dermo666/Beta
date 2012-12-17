@@ -1,5 +1,5 @@
 {
-    "hash": "02a01a098e03f284701b09e36181a1b0",
+    "hash": "742121bd06897d08cdfceff9d45ac0e9",
     "packages": [
         {
             "name": "doctrine/common",
@@ -7,18 +7,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common",
-                "reference": "b91837135ce102d2e95fb394b43d8d1d47cde95c"
+                "reference": "d514e3920656921ba1148f16a4089222c58bc83a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/common/archive/b91837135ce102d2e95fb394b43d8d1d47cde95c.zip",
-                "reference": "b91837135ce102d2e95fb394b43d8d1d47cde95c",
+                "url": "https://github.com/doctrine/common/archive/d514e3920656921ba1148f16a4089222c58bc83a.zip",
+                "reference": "d514e3920656921ba1148f16a4089222c58bc83a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-12-04 14:57:34",
+            "time": "2012-12-05 12:03:39",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -115,35 +115,30 @@
         },
         {
             "name": "doctrine/doctrine-module",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/DoctrineModule.git",
-                "reference": "f31d3bb72edc6dfbe37243ec36be1206d3d5900f"
+                "reference": "0.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineModule/archive/f31d3bb72edc6dfbe37243ec36be1206d3d5900f.zip",
-                "reference": "f31d3bb72edc6dfbe37243ec36be1206d3d5900f",
+                "url": "https://github.com/doctrine/DoctrineModule/zipball/0.5.2",
+                "reference": "0.5.2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/console": ">=2.0.13",
                 "doctrine/common": ">=2.3-dev,<2.5-dev",
-                "zendframework/zendframework": "2.*",
-                "doctrine/data-fixtures": "1.*"
+                "doctrine/data-fixtures": "1.*",
+                "symfony/console": ">=2.0.13",
+                "zendframework/zendframework": "2.*"
             },
-            "time": "2012-12-01 01:55:06",
+            "time": "2012-10-22 07:54:09",
             "bin": [
                 "bin/doctrine-module"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.6.x-dev"
-                }
-            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -191,31 +186,26 @@
         },
         {
             "name": "doctrine/doctrine-mongo-odm-module",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoODMModule",
-                "reference": "0649743b689fc47582db5a40187a22f8c0ccd101"
+                "reference": "0.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineMongoODMModule/archive/0649743b689fc47582db5a40187a22f8c0ccd101.zip",
-                "reference": "0649743b689fc47582db5a40187a22f8c0ccd101",
+                "url": "https://github.com/doctrine/DoctrineMongoODMModule/zipball/0.1.1",
+                "reference": "0.1.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "zendframework/zendframework": "2.*",
                 "doctrine/doctrine-module": "0.*",
-                "doctrine/mongodb-odm": "1.*"
+                "doctrine/mongodb-odm": "1.*",
+                "zendframework/zendframework": "2.*"
             },
-            "time": "2012-11-29 19:13:01",
+            "time": "2012-10-31 12:31:12",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -265,32 +255,27 @@
         },
         {
             "name": "doctrine/mongodb",
-            "version": "dev-master",
+            "version": "1.0.0-BETA1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb",
-                "reference": "9ac0ba4f96ea50d20de940b9147ee68b308ea356"
+                "reference": "1.0.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/mongodb/archive/9ac0ba4f96ea50d20de940b9147ee68b308ea356.zip",
-                "reference": "9ac0ba4f96ea50d20de940b9147ee68b308ea356",
+                "url": "https://github.com/doctrine/mongodb/zipball/1.0.0-BETA1",
+                "reference": "1.0.0-BETA1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "ext-mongo": "*",
-                "doctrine/common": ">=2.1.0,<2.5-dev",
-                "symfony/yaml": ">=2.0,<2.3-dev",
-                "symfony/console": ">=2.0,<2.3-dev"
+                "symfony/yaml": ">=2.0",
+                "symfony/console": ">=2.0",
+                "doctrine/common": ">=2.1.0"
             },
-            "time": "2012-12-02 23:00:57",
+            "time": "2012-08-02 11:00:59",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -331,22 +316,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "205de81707fea1e6e7d4ed735ffd7a93d454949b"
+                "reference": "29c6b58c9e65f5717aaea147600c702a4083b9c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/mongodb-odm/archive/205de81707fea1e6e7d4ed735ffd7a93d454949b.zip",
-                "reference": "205de81707fea1e6e7d4ed735ffd7a93d454949b",
+                "url": "https://github.com/doctrine/mongodb-odm/archive/29c6b58c9e65f5717aaea147600c702a4083b9c8.zip",
+                "reference": "29c6b58c9e65f5717aaea147600c702a4083b9c8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": ">=2.2.0,<2.5-dev",
-                "doctrine/mongodb": ">=1.0.0-beta1,<1.1-dev",
                 "symfony/yaml": ">=2.0-dev,<2.3-dev",
-                "symfony/console": ">=2.0-dev,<2.3-dev"
+                "symfony/console": ">=2.0-dev,<2.3-dev",
+                "doctrine/mongodb": ">=1.0.0-beta1,<1.0.0-beta3"
             },
-            "time": "2012-12-03 18:13:49",
+            "time": "2012-12-05 16:55:31",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -393,18 +378,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "236c4d50d364c21bafa46e35aaf4fd38eec63e66"
+                "reference": "92cd0e84022f31287337ab17842bbfff47d2fc79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/archive/236c4d50d364c21bafa46e35aaf4fd38eec63e66.zip",
-                "reference": "236c4d50d364c21bafa46e35aaf4fd38eec63e66",
+                "url": "https://github.com/symfony/Console/archive/92cd0e84022f31287337ab17842bbfff47d2fc79.zip",
+                "reference": "92cd0e84022f31287337ab17842bbfff47d2fc79",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-03 22:00:56",
+            "time": "2012-12-14 09:43:16",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -441,18 +426,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "bed4fddc24392513e01b32a78d600b1272ed9a6c"
+                "reference": "69f09b9a989c54a6c3dcb1b88c981f10fde40d62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/archive/bed4fddc24392513e01b32a78d600b1272ed9a6c.zip",
-                "reference": "bed4fddc24392513e01b32a78d600b1272ed9a6c",
+                "url": "https://github.com/symfony/Yaml/archive/69f09b9a989c54a6c3dcb1b88c981f10fde40d62.zip",
+                "reference": "69f09b9a989c54a6c3dcb1b88c981f10fde40d62",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-13 14:08:04",
+            "time": "2012-12-15 13:02:34",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -484,16 +469,16 @@
         },
         {
             "name": "zendframework/zendframework",
-            "version": "dev-develop",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "git://github.com/zendframework/zf2.git",
-                "reference": "e221eaf311048c32e5389de16fedd43b5bd38a6d"
+                "reference": "release-2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/zendframework/zf2/archive/e221eaf311048c32e5389de16fedd43b5bd38a6d.zip",
-                "reference": "e221eaf311048c32e5389de16fedd43b5bd38a6d",
+                "url": "https://github.com/zendframework/zf2/archive/release-2.0.5.zip",
+                "reference": "release-2.0.5",
                 "shasum": ""
             },
             "require": {
@@ -559,7 +544,7 @@
                 "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
                 "zendframework/zendservice-recaptcha": "ZendService\\ReCaptcha for rendering ReCaptchas in Zend\\Captcha and/or Zend\\Form"
             },
-            "time": "2012-12-03 21:30:17",
+            "time": "2012-11-29 15:32:02",
             "bin": [
                 "bin/classmap_generator.php"
             ],
@@ -587,6 +572,103 @@
                 "framework",
                 "zf2"
             ]
+        },
+        {
+            "name": "zf-commons/zfc-base",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/ZF-Commons/ZfcBase.git",
+                "reference": "38990ad5f51002dd271ab676b90a3d59728190e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/ZF-Commons/ZfcBase/archive/38990ad5f51002dd271ab676b90a3d59728190e2.zip",
+                "reference": "38990ad5f51002dd271ab676b90a3d59728190e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zendframework": "2.*"
+            },
+            "time": "2012-10-24 17:42:28",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "ZfcBase": "src/"
+                },
+                "classmap": [
+                    "./Module.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kyle Spraggs",
+                    "email": "theman@spiffyjr.me",
+                    "homepage": "http://www.spiffyjr.me/"
+                },
+                {
+                    "name": "Evan Coury",
+                    "email": "me@evancoury.com",
+                    "homepage": "http://blog.evan.pro/"
+                }
+            ],
+            "description": "A set of genetic (abstract) classes which are commonly used across multiple modules.",
+            "homepage": "https://github.com/ZF-Commons/ZfcBase",
+            "keywords": [
+                "zf2"
+            ]
+        },
+        {
+            "name": "zf-commons/zfc-user",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/ZF-Commons/ZfcUser.git",
+                "reference": "18c4fc2e71a53b558e1feec51c9c5fb10a070188"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/ZF-Commons/ZfcUser/archive/18c4fc2e71a53b558e1feec51c9c5fb10a070188.zip",
+                "reference": "18c4fc2e71a53b558e1feec51c9c5fb10a070188",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zf-commons/zfc-base": "dev-master",
+                "zendframework/zendframework": "2.*"
+            },
+            "time": "2012-12-08 23:49:26",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "ZfcUser": "src/"
+                },
+                "classmap": [
+                    "./Module.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kyle Spraggs",
+                    "email": "theman@spiffyjr.me",
+                    "homepage": "http://www.spiffyjr.me/"
+                },
+                {
+                    "name": "Evan Coury",
+                    "email": "me@evancoury.com",
+                    "homepage": "http://blog.evan.pro/"
+                }
+            ],
+            "description": "A generic user registration and authentication module for ZF2. Supports Zend\\Db and Doctrine2.",
+            "homepage": "https://github.com/ZF-Commons/ZfcUser",
+            "keywords": [
+                "zf2"
+            ]
         }
     ],
     "packages-dev": null,
@@ -595,7 +677,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "doctrine/doctrine-module": 20,
-        "doctrine/doctrine-mongo-odm-module": 20
+        "zf-commons/zfc-base": 20,
+        "zf-commons/zfc-user": 20
     }
 }
