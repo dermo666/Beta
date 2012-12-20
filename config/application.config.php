@@ -6,7 +6,8 @@ return array(
         'DoctrineMongoODMModule',
         'ZfcBase',
         'ZfcUser',
-        'ZfcUserDoctrineMongoODM'
+        'ZfcUserDoctrineMongoODM',
+        'AlbumRest',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
