@@ -24,19 +24,25 @@ class AlbumRestController extends AbstractRestfulController
     
     public function getList()
     {
-        return array(
-                'data' => $this->getEntityManager()->getRepository('AlbumRest\Entity\Album')->findAll() 
-               );
+        return new \Zend\View\Model\JsonModel(
+                      array(
+                        'data' => $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->findAll() 
+                      )
+                   );
     }
  
     public function get($id)
     {
-        # code...
+        return new \Zend\View\Model\JsonModel(
+                      array(
+                          'data' => $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->findById($id) 
+                      )
+                   );
     }
  
     public function create($data)
     {
-        # code...
+        
     }
  
     public function update($id, $data)
@@ -49,12 +55,12 @@ class AlbumRestController extends AbstractRestfulController
         # code...
     }
     
-    public function setEntityManager(DocumentManager $dm)
+    public function setDocumentManager(DocumentManager $dm)
     {
       $this->dm = $dm;
     }
     
-    public function getEntityManager()
+    public function getDocumentManager()
     {
       if (null === $this->dm) {
         $this->dm = $this->getServiceLocator()->get('doctrine.documentmanager.odm_default');

@@ -39,9 +39,22 @@ class AlbumRestControllerTest extends PHPUnit_Framework_TestCase
         $this->controller->setEvent($this->event);
         $this->controller->setServiceLocator($serviceManager);
     }
+    
+    public function shutDown()
+    {
+        
+    }
  
     public function testGetListCanBeAccessed()
     {
+        $repo = $this->getMock('Repository', array('findAll'));
+        $repo->expects($this->once())->method('findAll')->will($this->returnValue(array('aaa'=>'aaa')));
+        
+        $dm = $this->getMock('Doctrine\ODM\MongoDB\DocumentManager', array('getRepository'), array(), '', FALSE);
+        $dm->expects($this->once())->method('getRepository')->will($this->returnValue($repo));
+        
+        $this->controller->setDocumentManager($dm);
+        
         $result   = $this->controller->dispatch($this->request);
         $response = $this->controller->getResponse();
  
@@ -50,6 +63,14 @@ class AlbumRestControllerTest extends PHPUnit_Framework_TestCase
  
     public function testGetCanBeAccessed()
     {
+        $repo = $this->getMock('Repository', array('findById'));
+        $repo->expects($this->once())->method('findById')->will($this->returnValue('bbb'));
+        
+        $dm = $this->getMock('Doctrine\ODM\MongoDB\DocumentManager', array('getRepository'), array(), '', FALSE);
+        $dm->expects($this->once())->method('getRepository')->will($this->returnValue($repo));
+
+        $this->controller->setDocumentManager($dm);
+        
         $this->routeMatch->setParam('id', '1');
  
         $result   = $this->controller->dispatch($this->request);

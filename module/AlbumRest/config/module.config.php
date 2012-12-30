@@ -31,19 +31,15 @@ return array(
                 'options' => array(
                     'route'       => '/album-rest[/:id]',
                     'constraints' => array(
-                    'id'          => '[0-9]+',
+                        'id'          => '[0-9]+',
                     ),
                     'defaults' => array(
                         'controller' => 'AlbumRest\Controller\AlbumRest',
+                        'format'     => 'json',
                     ),
                 ),
             ),
         ),
     ),
  
-    'view_manager' => array(
-        'template_path_stack' => array(
-            'album-rest' => __DIR__ . '/../view',
-        ),
-    ),
 );
