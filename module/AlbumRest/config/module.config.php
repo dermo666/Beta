@@ -31,7 +31,7 @@ return array(
                 'options' => array(
                     'route'       => '/album-rest[/:id]',
                     'constraints' => array(
-                        'id'          => '[0-9]+',
+                        'id'          => '[a-z, 0-9]+',
                     ),
                     'defaults' => array(
                         'controller' => 'AlbumRest\Controller\AlbumRest',

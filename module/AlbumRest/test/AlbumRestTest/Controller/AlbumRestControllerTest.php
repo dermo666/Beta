@@ -7,6 +7,8 @@
 
 namespace AlbumRestTest\Controller;
  
+use AlbumRest\Entity\Album;
+
 use AlbumRestTest\Bootstrap;
 use AlbumRest\Controller\AlbumRestController;
 use Zend\Http\Request;
@@ -45,10 +47,17 @@ class AlbumRestControllerTest extends PHPUnit_Framework_TestCase
         
     }
  
-    public function testGetListCanBeAccessed()
+    public function testGetListReturingListOfAlbums()
     {
+        $album1 = new Album();
+        $album1->populate(array('id' => 'aaa', 'artist' => 'Duran Duran', 'title' => 'View to a Kill'));
+        $album2 = new Album();
+        $album2->populate(array('id' => 'bbb', 'artist' => 'Thievery Corporation', 'title' => 'Culture of Fear'));
+        
+        $albums = array($album1, $album2);
+        
         $repo = $this->getMock('Repository', array('findAll'));
-        $repo->expects($this->once())->method('findAll')->will($this->returnValue(array('aaa'=>'aaa')));
+        $repo->expects($this->once())->method('findAll')->will($this->returnValue($albums));
         
         $dm = $this->getMock('Doctrine\ODM\MongoDB\DocumentManager', array('getRepository'), array(), '', FALSE);
         $dm->expects($this->once())->method('getRepository')->will($this->returnValue($repo));
@@ -61,10 +70,13 @@ class AlbumRestControllerTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
  
-    public function testGetCanBeAccessed()
+    public function testGetReturnsOneAlbum()
     {
-        $repo = $this->getMock('Repository', array('findById'));
-        $repo->expects($this->once())->method('findById')->will($this->returnValue('bbb'));
+        $album = new Album();
+        $album->populate(array('id' => 'bbb', 'artist' => 'Thievery Corporation', 'title' => 'Culture of Fear'));
+        
+        $repo = $this->getMock('Repository', array('find'));
+        $repo->expects($this->once())->method('find')->will($this->returnValue($album));
         
         $dm = $this->getMock('Doctrine\ODM\MongoDB\DocumentManager', array('getRepository'), array(), '', FALSE);
         $dm->expects($this->once())->method('getRepository')->will($this->returnValue($repo));
@@ -79,9 +91,11 @@ class AlbumRestControllerTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
  
-    public function testCreateCanBeAccessed()
+    public function testCreateToAddNewAlbum()
     {
-        $this->routeMatch->setParam('id', '1');
+        $this->markTestIncomplete("Need factory to create the album");
+        
+        $this->routeMatch->setParam('data', array('id' => 'bbb', 'artist' => 'Thievery Corporation', 'title' => 'Culture of Fear'));
         $this->request->setMethod('post');
  
         $result   = $this->controller->dispatch($this->request);
@@ -90,19 +104,45 @@ class AlbumRestControllerTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
  
-    public function testUpdateCanBeAccessed()
+    public function testUpdateToChangeTheAlbum()
     {
-        $this->routeMatch->setParam('id', '1');
+        $album = new Album();
+        $album->populate(array('id' => 'aaa', 'artist' => 'Duran Duran', 'title' => 'View to a Kill'));
+        
+        $repo = $this->getMock('Repository', array('find'));
+        $repo->expects($this->exactly(2))->method('find')->will($this->returnValue($album));
+        
+        $dm = $this->getMock('Doctrine\ODM\MongoDB\DocumentManager', array('getRepository', 'persist', 'flush'), array(), '', FALSE);
+        $dm->expects($this->exactly(2))->method('getRepository')->will($this->returnValue($repo));
+        $dm->expects($this->once())->method('persist')->with($this->equalTo($album));
+        $dm->expects($this->once())->method('flush');
+        
+        $this->controller->setDocumentManager($dm);
+        
+        $this->routeMatch->setParam('id', 'bbb');
         $this->request->setMethod('put');
+        $this->request->setContent('artist=Thievery Corporation&title=Culture of Fear');
  
         $result   = $this->controller->dispatch($this->request);
         $response = $this->controller->getResponse();
  
         $this->assertEquals(200, $response->getStatusCode());
+        $this->assertEquals('Culture of Fear', $album->title);
     }
  
-    public function testDeleteCanBeAccessed()
+    public function testDeleteRemovesAlbum()
     {
+        $album = new Album();
+        
+        $repo = $this->getMock('Repository', array('find'));
+        $repo->expects($this->once())->method('find')->will($this->returnValue($album));
+        
+        $dm = $this->getMock('Doctrine\ODM\MongoDB\DocumentManager', array('getRepository', 'remove'), array(), '', FALSE);
+        $dm->expects($this->once())->method('getRepository')->will($this->returnValue($repo));
+        $dm->expects($this->once())->method('remove')->with($this->equalTo($album));
+        
+        $this->controller->setDocumentManager($dm);
+        
         $this->routeMatch->setParam('id', '1');
         $this->request->setMethod('delete');
  

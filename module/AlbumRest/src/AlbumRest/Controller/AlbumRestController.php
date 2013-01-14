@@ -10,8 +10,7 @@ namespace AlbumRest\Controller;
 use Zend\Mvc\Controller\AbstractRestfulController;
  
 use AlbumRest\Entity\Album;
-//use Album\Form\AlbumForm;
-//use Album\Model\AlbumTable;
+use AlbumRest\Form\AlbumForm;
 use Doctrine\ODM\MongoDB\DocumentManager;
  
 class AlbumRestController extends AbstractRestfulController
@@ -24,35 +23,80 @@ class AlbumRestController extends AbstractRestfulController
     
     public function getList()
     {
+        $albums = $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->findAll();
+        $data   = array();
+        
+        foreach ($albums as $album) {
+            $data[] = $album->getArrayCopy();
+        }
+        
         return new \Zend\View\Model\JsonModel(
                       array(
-                        'data' => $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->findAll() 
+                        'data' =>  $data
                       )
                    );
     }
  
     public function get($id)
     {
+        $album = $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->find($id);
+        
         return new \Zend\View\Model\JsonModel(
                       array(
-                          'data' => $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->findById($id) 
+                          'data' => $album->getArrayCopy()
                       )
                    );
     }
  
     public function create($data)
     {
+        $form  = new AlbumForm();
+        $album = new Album();
         
+        $form->setInputFilter($album->getInputFilter());
+        $form->setData($data);
+        
+        if ($form->isValid()) {
+            $album->populate($form->getData());
+            $this->getDocumentManager()->persist($album);
+            $this->getDocumentManager()->flush();
+            
+            $id = $album->id;
+        }
+        
+        return $this->get($id);
     }
  
     public function update($id, $data)
     {
-        # code...
+        $data['id'] = $id;
+        
+        $album = $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->find($id);
+        
+        $form  = new AlbumForm();
+        $form->bind($album);
+        $form->setInputFilter($album->getInputFilter());
+        $form->setData($data);
+        
+        if ($form->isValid()) {
+            $this->getDocumentManager()->persist($album);
+            $this->getDocumentManager()->flush();
+        }
+        
+        return $this->get($id);
     }
  
     public function delete($id)
     {
-        # code...
+        $album = $this->getDocumentManager()->getRepository('AlbumRest\Entity\Album')->find($id);
+        
+        $this->getDocumentManager()->remove($album);
+        
+        return new \Zend\View\Model\JsonModel(
+                       array(
+                           'data' => 'deleted'
+                        )
+        );
     }
     
     public function setDocumentManager(DocumentManager $dm)

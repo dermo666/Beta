@@ -84,9 +84,9 @@ class Album implements InputFilterAwareInterface
      */
     public function populate($data = array()) 
     {
-        $this->id = $data['id'];
+        $this->id     = $data['id'];
         $this->artist = $data['artist'];
-        $this->title = $data['title'];
+        $this->title  = $data['title'];
     }
 
     public function setInputFilter(InputFilterInterface $inputFilter)
