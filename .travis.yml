@@ -9,5 +9,8 @@ before_script:
 
 services: mongodb
 
-script: phpunit --bootstrap module/Application/test/Bootstrap.php 
-script: phpunit --bootstrap module/AlbumRest/test/Bootstrap.php 
+env:
+  - MODULE=Application
+  - MODULE=AlbumRest
+
+script: phpunit --configuration module/$MODULE/test/
