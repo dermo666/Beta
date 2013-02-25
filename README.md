@@ -1,7 +1,7 @@
 Beta
 ====
 
-"!https://travis-ci.org/dermo666/Beta.png!":https://travis-ci.org/dermo666/Beta
+[![Build Status](https://secure.travis-ci.org/dermo666/Beta.png)](http://travis-ci.org/dermo666/Beta)
 
 Research project:
 * ZF2 ../application
