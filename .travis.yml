@@ -1,0 +1,7 @@
+language: php
+
+php:
+  - 5.3
+
+script: phpunit --bootstrap module/Application/test/Bootstrap.php 
+script: phpunit --bootstrap module/AlbumRest/test/Bootstrap.php 
